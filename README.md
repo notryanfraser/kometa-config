@@ -29,6 +29,6 @@ Editions of the same movie share a TMDb id, so they use a key like `120 Extended
 
 ## Placeholder true-up
 
-`scripts/posters_trueup/` keeps the placeholders in step with Plex. It runs daily at 15:45, before Kometa's 16:00 run, as the Unraid User Script `kometa_posters_trueup` (`/boot/config/plugins/user.scripts/scripts/kometa_posters_trueup/`). `script` is the User Script; it runs `trueup.py` inside the Kometa container, which reads the Plex token from Kometa's own config.
+`scripts/posters_trueup/` keeps the placeholders in step with Plex. It runs daily at 15:45, before Kometa's 16:00 run, as the Unraid User Script `kometa_posters_trueup` (`/boot/config/plugins/user.scripts/scripts/kometa_posters_trueup/`). `script` is the User Script; it runs `trueup.py` inside the Kometa container, which reads the Plex URL and token from Kometa's own `config.yml` and finds the library named `Movies` there (set `LIBRARY` at the top of the script for another name).
 
 Each run adds a placeholder for every Plex movie whose TMDb id is not in the file and removes placeholders for movies no longer in Plex. Entries with a poster are never changed. It writes only when something changed, keeps the last 7 dated backups, and changes nothing if Plex returns fewer than 1,000 movies; if it would remove more than 25 placeholders, it skips the removals.

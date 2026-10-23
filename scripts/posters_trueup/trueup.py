@@ -12,17 +12,32 @@ import glob, json, os, re, shutil, sys, time, urllib.request
 import ruamel.yaml
 
 PATH = sys.argv[1] if len(sys.argv) > 1 else "/config/Movie_posters_tmdb.yml"
+CONFIG = "/config/config.yml"
+LIBRARY = "Movies"  # the library's name in Kometa's config.yml
 KEEP_BACKUPS = 7
+MIN_MOVIES = 1000  # fewer than this looks like a Plex problem; change nothing
 MAX_REMOVALS = 25  # more than this looks like a Plex problem, not real removals
 PLACEHOLDER = "  #   url_poster: https://theposterdb.com/api/assets/replaceMe/view"
 
 y = ruamel.yaml.YAML(typ="safe")
-cfg = y.load(open("/config/config.yml"))
-req = urllib.request.Request(
-    f"http://192.168.1.168:32400/library/sections/2/all?includeGuids=1&X-Plex-Token={cfg['plex']['token']}",
-    headers={"Accept": "application/json"})
-movies = json.load(urllib.request.urlopen(req, timeout=120))["MediaContainer"].get("Metadata", [])
-if len(movies) < 1000:
+cfg = y.load(open(CONFIG))
+lib = cfg["libraries"][LIBRARY] or {}
+# A library can override the top-level plex settings, as in Kometa itself.
+plex_cfg = {**cfg["plex"], **(lib.get("plex") or {})}
+base, token = plex_cfg["url"].rstrip("/"), plex_cfg["token"]
+title = lib.get("library_name", LIBRARY)
+
+
+def plex_get(path):
+    req = urllib.request.Request(f"{base}{path}", headers={"Accept": "application/json", "X-Plex-Token": token})
+    return json.load(urllib.request.urlopen(req, timeout=120))["MediaContainer"]
+
+
+sections = [s["key"] for s in plex_get("/library/sections").get("Directory", []) if s["title"] == title]
+if len(sections) != 1:
+    sys.exit(f"Found {len(sections)} Plex libraries named {title!r}; not changing anything")
+movies = plex_get(f"/library/sections/{sections[0]}/all?includeGuids=1").get("Metadata", [])
+if len(movies) < MIN_MOVIES:
     sys.exit(f"Plex returned only {len(movies)} movies; not changing anything")
 plex = {}
 for m in movies:
