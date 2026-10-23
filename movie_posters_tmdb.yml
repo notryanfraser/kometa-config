@@ -908,8 +908,8 @@ metadata:
     url_poster: https://theposterdb.com/api/assets/51451/view
   # 18480: # Brüno (2009)
   #   url_poster: https://theposterdb.com/api/assets/replaceMe/view
-  # 1514026: # Buddy (2026)
-  #   url_poster: https://theposterdb.com/api/assets/replaceMe/view
+  1514026: # Buddy (2026)
+    url_poster: https://theposterdb.com/api/assets/741687/view
   # 10206: # Buffy the Vampire Slayer (1992)
   #   url_poster: https://theposterdb.com/api/assets/replaceMe/view
   # 701387: # Bugonia (2025)
@@ -4758,8 +4758,8 @@ metadata:
     url_poster: https://theposterdb.com/api/assets/4456/view
   181808: # Star Wars: Episode VIII - The Last Jedi (2017)
     url_poster: https://theposterdb.com/api/assets/4458/view
-  # 1228710: # Star Wars: The Mandalorian and Grogu (2026)
-  #   url_poster: https://theposterdb.com/api/assets/replaceMe/view
+  1228710: # Star Wars: The Mandalorian and Grogu (2026)
+    url_poster: https://theposterdb.com/api/assets/730485/view
   181812: # Star Wars: The Rise Of Skywalker (2019)
     url_poster: https://theposterdb.com/api/assets/24864/view
   2164: # Stargate (1994)
