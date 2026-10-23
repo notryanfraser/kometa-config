@@ -1,0 +1,4 @@
+#!/bin/bash
+# Add a commented-out placeholder to Movie_posters_tmdb.yml for each new Plex movie,
+# and drop placeholders for movies that left Plex. Live entries are never changed.
+docker exec -i Kometa python - < /boot/config/plugins/user.scripts/scripts/kometa_posters_trueup/trueup.py

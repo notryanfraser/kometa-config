@@ -16037,8 +16037,6 @@ metadata:
             url_poster: https://api.mediux.pro/assets/ad33b5ce-65f3-4a63-aaea-3ec9bcc3f0fe
           2:
             url_poster: https://api.mediux.pro/assets/6f11d6a0-33fe-4658-95b1-5023188f41e4
-          2:
-            url_poster: https://api.mediux.pro/assets/0e59b607-0400-473d-a8aa-571f4348c0ba
           3:
             url_poster: https://api.mediux.pro/assets/05993ead-f3e9-4a32-be0a-97b5cb9960bf
           4:
@@ -18845,21 +18843,6 @@ metadata:
             url_poster: https://api.mediux.pro/assets/0733ad28-5b59-4230-b0ef-1d1db2d2623d
           10:
             url_poster: https://api.mediux.pro/assets/a8593f42-a5d7-4a32-95e5-2af7120703d1
-  129261: # TVDB id for Spartacus. Set by Kwickflix on MediUX. https://mediux.pro/sets/24334
-    seasons:
-        episodes:
-          1:
-            url_poster: https://api.mediux.pro/assets/5d9d5e9f-7da1-4898-aa12-7bcb592720fb
-          2:
-            url_poster: https://api.mediux.pro/assets/4277cae5-59dc-4fe9-a2fc-9b53ecdd2039
-          3:
-            url_poster: https://api.mediux.pro/assets/6e5b03f4-af63-466c-8f92-2c444e2eff80
-          4:
-            url_poster: https://api.mediux.pro/assets/040725cc-6738-4907-9d95-2a30ddfb7879
-          5:
-            url_poster: https://api.mediux.pro/assets/5fea0080-65a0-4eed-ae6c-4bfb63e6b27c
-          6:
-            url_poster: https://api.mediux.pro/assets/a0d251c5-75bb-4190-b42e-6dd48813c2b5
   81494: # TVDB id for The Spectacular Spider-Man. Set by MiniZaki on MediUX. https://mediux.pro/sets/4709
     url_poster: https://api.mediux.pro/assets/2ec85295-eb8e-457c-9022-68dc6f502dd8
     seasons:

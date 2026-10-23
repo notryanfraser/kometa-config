@@ -3,39 +3,92 @@ templates:
     sort_title: +1_<<num>><<collection_name>>
     sync_mode: sync
     smart_label: random
+  TV:
+    optional:
+      - collection
+      - tmdb_show
+      - tvdb_show
+      - imdb_list
+      - tmdb_list
+      - tpdb_id
+    tmdb_collection_details: <<collection>>
+    tmdb_show: <<tmdb_show>>
+    tvdb_show: <<tvdb_show>>
+    tmdb_list: <<tmdb_list>>
+    imdb_list: 
+      list_id: <<imdb_list>>
+    sync_mode: sync
+    url_poster: https://theposterdb.com/api/assets/<<tpdb_id>>/view
+    sort_title: <<collection_name>>
+    collection_order: release
+    collection_mode: hide
 collections:
-  Plex Popular:
-    template: { name: Chart, num: 1 }
-    tautulli_popular:
-      list_days: 30
-      list_size: 20
-      list_buffer: 20
-    tautulli_watched:
-      list_days: 30
-      list_size: 20
-      list_buffer: 20
-    summary: Shows Popular on Plex
-  Trending:
-    template: { name: Chart, num: 2 }
-    trakt_trending: 10
-    tmdb_trending_daily: 10
-    tmdb_trending_weekly: 10
-    summary: Shows Trending across the internet
-  Popular:
-    template: { name: Chart, num: 3 }
-    tmdb_popular: 40
-    imdb_list:
-      url: https://www.imdb.com/search/title/?title_type=tv_series,tv_miniseries
-      limit: 40
-    summary: Popular Shows across the internet
-  Top Rated:
-    template: { name: Chart, num: 4 }
-    imdb_list:
-      url: https://www.imdb.com/search/title/?title_type=tv_series,tv_miniseries&num_votes=20000,&sort=user_rating,desc
-      limit: 100
-    tmdb_top_rated: 100
-    summary: Top Rated Movies across the internet
-  Emmy Winners:
-    template: { name: Chart, num: 5 }
-    imdb_list: https://www.imdb.com/search/title/?title_type=tv_series,tv_miniseries&groups=emmy_winner
-    summary: Emmy Winning Shows
+  # Plex Popular:
+  #   template: { name: Chart, num: 1 }
+  #   tautulli_popular:
+  #     list_days: 30
+  #     list_size: 20
+  #     list_buffer: 20
+  #   tautulli_watched:
+  #     list_days: 30
+  #     list_size: 20
+  #     list_buffer: 20
+  #   summary: Shows Popular on Plex
+  # Trending:
+  #   template: { name: Chart, num: 2 }
+  #   tmdb_trending_daily: 10
+  #   tmdb_trending_weekly: 10
+  #   summary: Shows Trending across the internet
+  # Popular:
+  #   template: { name: Chart, num: 3 }
+  #   tmdb_popular: 40
+  #   imdb_list:
+  #     url: https://www.imdb.com/search/title/?title_type=tv_series,tv_miniseries
+  #     limit: 40
+  #   summary: Popular Shows across the internet
+  # Top Rated:
+  #   template: { name: Chart, num: 4 }
+  #   imdb_list:
+  #     url: https://www.imdb.com/search/title/?title_type=tv_series,tv_miniseries&num_votes=20000,&sort=user_rating,desc
+  #     limit: 100
+  #   tmdb_top_rated: 100
+  #   summary: Top Rated Movies across the internet
+  # Emmy Winners:
+  #   template: { name: Chart, num: 5 }
+  #   imdb_list: https://www.imdb.com/search/title/?title_type=tv_series,tv_miniseries&groups=emmy_winner
+  #   summary: Emmy Winning Shows
+  Star Wars Collection:
+    template:
+      name: TV
+      tpdb_id: 4448
+      imdb_list: ls082398690
+  Yellowstone Collection:
+    template:
+      name: TV
+      tpdb_id: 320658
+      tmdb_show: 118357,157744,73586
+  12 Monkeys Collection:
+    template:
+      name: TV
+      tpdb_id: 117064
+      tmdb_show: 60948
+  Dune Collection:
+    summary: The saga of Paul Atreides and his rise to power on the deadly planet Arrakis.
+    template:
+      name: TV
+      tpdb_id: 197348
+      tmdb_show: 90228
+  Star Trek Collection:
+    summary: Star Trek is an American science fiction media franchise originating from the 1960s television series Star Trek, created by Gene Roddenberry. It follows the crew of the starship USS Enterprise as it completes its missions in space in the 23rd century.
+    template:
+      name: TV
+      tpdb_id: 21270
+    plex_search:
+      all:
+        title.begins: Star Trek
+  Stargate Collection:
+    summary: Stargate (Stylised as STARGΛTE) is a science fiction media franchise based on the film written by Dean Devlin and Roland Emmerich. The franchise is based on the idea of an alien Einstein–Rosen bridge device (the Stargate) that enables nearly instantaneous travel across the cosmos.
+    template:
+      name: TV
+      tpdb_id: 257488
+      imdb_list: ls020207146

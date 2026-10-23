@@ -20,10 +20,8 @@ templates:
     optional:
       - collection
       - tmdb_movie
-      - trakt_list
       - tmdb_list
       - tpdb_id
-    trakt_list_details: <<trakt_list>>
     tmdb_collection_details: <<collection>>
     tmdb_movie: <<tmdb_movie>>
     tmdb_list: <<tmdb_list>>
@@ -35,12 +33,6 @@ templates:
     sort_title: +1_<<num>><<collection_name>>
     sync_mode: sync
     smart_label: random
-  Best of:
-    trakt_list: https://trakt.tv/users/lish408/lists/rotten-tomatoes-best-of-<<year>>
-    sort_title: +1_Best of <<year>>
-    sync_mode: sync
-    summary: Rotten Tomatoes Best Movies of <<year>>
-    smart_label: audience_rating.desc
 collections:
   Plex Popular:
     template: { name: Chart, num: 1 }
@@ -55,7 +47,6 @@ collections:
     summary: Movies Popular on Plex
   Trending:
     template: { name: Chart, num: 2 }
-    trakt_trending: 10
     tmdb_trending_daily: 10
     tmdb_trending_weekly: 10
     summary: Movies Trending across the internet
@@ -69,27 +60,6 @@ collections:
     collection_order: custom
     sync_mode: sync
     summary: Top Rated Movies across the internet
-  Oscars:
-    template: { name: Chart, num: 5 }
-    imdb_search:
-      event.winning: oscar
-    summary: Oscar Winning Movies
-  #Best of 2014:
-    #template: { name: Best of, year: 2014 }
-  #Best of 2015:
-    #template: { name: Best of, year: 2015 }
-  #Best of 2016:
-    #template: { name: Best of, year: 2016 }
-  #Best of 2017:
-    #template: { name: Best of, year: 2017 }
-  #Best of 2018:
-    #template: { name: Best of, year: 2018 }
-  #Best of 2019:
-    #template: { name: Best of, year: 2019 }
-  #Best of 2020:
-    #template: { name: Best of, year: 2020 }
-  #Best of 2021:
-    #template: { name: Best of, year: 2021 }
 
   Extraction Collection:
     template:
@@ -355,10 +325,14 @@ collections:
       tpdb_id: 28785
   Charlie Brown Collection:
     template:
-      collection: 1028525
       name: Movies
-      tmdb_movie: 31718,24251,15242,31732,34228
       tpdb_id: 188202
+    plex_search:
+      any:
+        writer: Charles M. Schulz
+        title: [Charlie Brown, Snoopy, Peanuts]
+        title.is: The Mayflower Voyagers
+    sync_mode: sync
   Chili Palmer Collection:
     template:
       collection: 91698
@@ -433,7 +407,6 @@ collections:
     template:
       collection: 178106
       name: Movies
-      tpdb_id: 287623
   Dead Snow Collection:
     template:
       collection: 286038
@@ -576,7 +549,6 @@ collections:
     template:
       collection: 363015
       name: Movies
-      tpdb_id: 283393
   Frozen Collection:
     template:
       collection: 386382
@@ -760,7 +732,6 @@ collections:
     template:
       collection: 726870
       name: Movies
-      tpdb_id: 288581
   John Wick Collection:
     template:
       collection: 404609
@@ -934,7 +905,6 @@ collections:
     template:
       collection: 995464
       name: Movies
-      tpdb_id: 294881
   Monsterverse Collection:
     collection_mode: hide
     imdb_list: https://www.imdb.com/list/ls060980695/
@@ -1113,9 +1083,11 @@ collections:
       tpdb_id: 56357
   Rudolph the Red-Nosed Reindeer Collection:
     template:
-      collection: 242587
       name: Movies
-      tpdb_id: 283398
+    plex_search:
+      all:
+        title.begins: Rudolph
+    sync_mode: sync
   Rush Hour Collection:
     template:
       collection: 90863
@@ -1805,7 +1777,7 @@ collections:
   Marvel Cinematic Universe:
     summary: The Marvel Cinematic Universe (MCU) is an American media franchise and shared universe centered on a series of superhero films produced by Marvel Studios.
     template:
-      collection: 131292,131296,131295,86311,284433,422834,618529,531241,529892,623911,1011336,912503
+      collection: 131292,131296,131295,86311,284433,422834,618529,531241,529892,623911
       name: Movies
       tmdb_movie: 1724,497698
       tpdb_id: 9772
@@ -1855,33 +1827,33 @@ collections:
       collection_order: release
   Insidious Collection:
     template:
-      tmdb_list: 228446
+      collection: 228446
       name: Movies
       tpdb_id: 972
       collection_order: release
   The Meg Collection:
     template:
-      tmdb_list: 742536
+      collection: 742536
       name: Movies
       tpdb_id: 401360
   X Collection:
     template:
-      tmdb_list: 950289
+      collection: 950289
       name: Movies
       tpdb_id: 513048
   Rebel Moon Collection:
     template:
-      tmdb_list: 934765
+      collection: 934765
       name: Movies
       tpdb_id: 449365
   Twisters Collection:
     template:
-      tmdb_list: 1062948
+      collection: 1062948
       name: Movies
       tpdb_id: 508439
   Spy Kids Collection:
     template:
-      tmdb_list: 86486
+      collection: 86486
       name: Movies
       tpdb_id: 116770
   Beetlejuice Collection:
@@ -1891,17 +1863,17 @@ collections:
       tpdb_id: 534111
   Inside Out Collection:
     template:
-      tmdb_list: 1022790
+      collection: 1022790
       name: Movies
       tpdb_id: 53463
   Megamind Collection:
     template:
-      tmdb_list: 1239518
+      collection: 1239518
       name: Movies
       tpdb_id: 43664
   The Bad Guys Collection:
     template:
-      tmdb_list: 1231053
+      collection: 1231053
       name: Movies
       tmdb_movie: 1046032,1329336
       tpdb_id: 439216
