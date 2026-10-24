@@ -2532,8 +2532,8 @@ metadata:
   #   url_poster: https://theposterdb.com/api/assets/replaceMe/view
   # 37921: # In Harm's Way (1965)
   #   url_poster: https://theposterdb.com/api/assets/replaceMe/view
-  # 1122573: # In the Grey (2026)
-  #   url_poster: https://theposterdb.com/api/assets/replaceMe/view
+  1122573: # In the Grey (2026)
+    url_poster: https://theposterdb.com/api/assets/718766/view
   # 9386: # In the Line of Fire (1993)
   #   url_poster: https://theposterdb.com/api/assets/replaceMe/view
   # 2654: # In the Mouth of Madness (1994)
@@ -5541,8 +5541,8 @@ metadata:
     url_poster: https://theposterdb.com/api/assets/31015/view
   131634: # The Hunger Games: Mockingjay - Part 2 (2015)
     url_poster: https://theposterdb.com/api/assets/31016/view
-  695721: # The Hunger Games: The Ballad of Songbirds & Snakes (2023)
-    url_poster: https://theposterdb.com/api/assets/445614/view
+  # 695721: # The Hunger Games: The Ballad of Songbirds & Snakes (2023)
+  #   url_poster: https://theposterdb.com/api/assets/replaceMe/view
   # 514847: # The Hunt (2020)
   #   url_poster: https://theposterdb.com/api/assets/replaceMe/view
   1669: # The Hunt for Red October (1990)
@@ -5701,8 +5701,8 @@ metadata:
     url_poster: https://theposterdb.com/api/assets/66525/view
   12207: # The Legend of Drunken Master (1994)
     url_poster: https://theposterdb.com/api/assets/170410/view
-  27933: # The Legend of Frosty the Snowman (2005)
-    url_poster: https://theposterdb.com/api/assets/283397/view
+  # 27933: # The Legend of Frosty the Snowman (2005)
+  #   url_poster: https://theposterdb.com/api/assets/replaceMe/view
   258489: # The Legend of Tarzan (2016)
     url_poster: https://theposterdb.com/api/assets/56452/view
   1656: # The Legend of Zorro (2005)
